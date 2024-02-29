@@ -1,0 +1,33 @@
+p {
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Formatting tables on the website with a dark blue border, and collapsed style */
+table {
+  border-style: solid;
+  border-width: 2px;
+  border-color: darkblue;
+  border-collapse: collapse;
+}
+
+/* Denoting the new paragraph about the DataThon with dark green and italics text to draw attention */
+p#new {
+    color: darkgreen;
+    font-style: italic;
+}
+
+/* Special color scheme for titles relating to the Smith School, using this special shade of "Smith Red" */
+.smith-title {
+    color: #990000;
+}
+
+img.logo {
+  width: 267px;
+  height: 72px;
+}
