@@ -10,9 +10,10 @@
 <div class="container">
 <h1>Contact Me</h1>
 
+<!-- After the form is submitted, displaying the thank you screen -->
 {% if form_submitted %}
     <div class="mb-3">
-        <h2>Form Completed!</h2>
+        <h2>Form Completed! Thank you!</h2>
     </div>
     <div class="mb-3">
         <p>First Name:</p>
@@ -41,6 +42,7 @@
 
     <p><a href="{{ url_for('contact') }}">Complete form again</a></p>
 
+<!-- Before the form is submitted, displaying the form -->
 {% else %}
   <form class="mb-3" action="{{ url_for('contact') }}" method="post">
   <div class="mb-3">
