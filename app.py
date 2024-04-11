@@ -219,6 +219,23 @@ def page_not_found(e):
     flash(f'Sorry! You are trying to access a page that does not exist. Please contact support if this problem persists.', 'error')
     return render_template('404.html'), 404
 
+@app.route('/training')
+@login_required
+@role_required(['ADMIN', 'MANAGER'])
+def training():
+    # Display training webpage to admin and managers
+    # This webpage is currently under construction
+
+    # I (Brian Garfunkel) will be the one providing training, so we will query the database for my info
+    trainer = User.query.filter_by(first_name='Brian', last_name='Garfunkel').first()
+
+    # Check if my information is in the database
+    if trainer:
+        return render_template('training.html', name=trainer.first_name + ' ' + trainer.last_name, email=trainer.email)
+    else:
+        # Handle the case if my information is not found
+        flash('Brian Garfunkel\'s information not found in the database.', 'error')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
